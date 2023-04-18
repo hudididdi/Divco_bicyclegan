@@ -27,17 +27,17 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--beta1', type=float, default=0.5, help='momentum term of adam')
         parser.add_argument('--lr_decay_iters', type=int, default=100, help='multiply by a gamma every lr_decay_iters iterations')
         # lambda parameters
-        parser.add_argument('--lambda_L1', type=float, default=100.0, help='weight for |B-G(A, E(B))|')
-        parser.add_argument('--lambda_GAN', type=float, default=1.0, help='weight on D loss. D(G(A, E(B)))')
-        parser.add_argument('--lambda_GAN2', type=float, default=1.0, help='weight on D2 loss, D(G(A, random_z))')
+        parser.add_argument('--lambda_L1', type=float, default=60.0, help='weight for |B-G(A, E(B))|')
+        parser.add_argument('--lambda_GAN', type=float, default=10, help='weight on D loss. D(G(A, E(B)))')
+        parser.add_argument('--lambda_GAN2', type=float, default=10, help='weight on D2 loss, D(G(A, random_z))')
         parser.add_argument('--lambda_z', type=float, default=0., help='weight for ||E(G(random_z)) - random_z||')
-        parser.add_argument('--lambda_kl', type=float, default=0.1, help='weight for KL loss')
+        parser.add_argument('--lambda_kl', type=float, default=0.01, help='weight for KL loss')
         parser.add_argument('--use_same_D', action='store_true', help='if two Ds share the weights or not')
 
         # DivCo related
         parser.add_argument('--lambda_contra', type=float, default=0.3, help='weight for contrastive loss')
         parser.add_argument('--num_negative', type=int, default=10, help='number of latent negative samples')
-        parser.add_argument('--radius', type=float, default=0.01, help='positive sample - distance threshold')
+        parser.add_argument('--radius', type=float, default=0.008, help='positive sample - distance threshold')
         parser.add_argument('--tau', type=float, default=1.0, help='temperature')
         parser.add_argument('--featnorm', action='store_true', help='whether featnorm')
         self.isTrain = True
