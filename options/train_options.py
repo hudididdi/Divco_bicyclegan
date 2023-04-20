@@ -27,9 +27,9 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--beta1', type=float, default=0.5, help='momentum term of adam')
         parser.add_argument('--lr_decay_iters', type=int, default=100, help='multiply by a gamma every lr_decay_iters iterations')
         # lambda parameters
-        parser.add_argument('--lambda_L1', type=float, default=50.0, help='weight for |B-G(A, E(B))|')
-        parser.add_argument('--lambda_GAN', type=float, default=10, help='weight on D loss. D(G(A, E(B)))')
-        parser.add_argument('--lambda_GAN2', type=float, default=10, help='weight on D2 loss, D(G(A, random_z))')
+        parser.add_argument('--lambda_L1', type=float, default=80.0, help='weight for |B-G(A, E(B))|')
+        parser.add_argument('--lambda_GAN', type=float, default=2, help='weight on D loss. D(G(A, E(B)))')
+        parser.add_argument('--lambda_GAN2', type=float, default=2, help='weight on D2 loss, D(G(A, random_z))')
         parser.add_argument('--lambda_z', type=float, default=0., help='weight for ||E(G(random_z)) - random_z||')
         parser.add_argument('--lambda_kl', type=float, default=0.01, help='weight for KL loss')
         parser.add_argument('--use_same_D', action='store_true', help='if two Ds share the weights or not')
